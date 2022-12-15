@@ -1,21 +1,21 @@
 class ProductManager {
     static products;
-    static id = 0;
 
     constructor() {
         this.products = [];
+        this.id = 0;
     }
 
     addProducts(product) {
-        if (!product.stock && !product.title && !product.title && !product.description && !product.price) {
+        if (!product.stock && !product.title && !product.description && !product.price) {
             console.log("Cuidado! Campos de un producto incompleto");
         } else {
             let searchCode = this.products.find((prod) => prod.code === product.code);
             if (searchCode) {
                 console.log("ERROR, codigo del producto " + product.title + " ya existe");
             } else {
-                ProductManager.id++;
-                product = { ...product, id: ProductManager.id };
+                this.id++;
+                product = { ...product, id: this.id };
                 this.products.push(product);
             }
         }
