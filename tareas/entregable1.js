@@ -1,9 +1,39 @@
-class ProductManager {
-    static products;
+const fs = require("node:fs");
 
-    constructor() {
-        this.products = [];
-        this.id = 0;
+class ProductManager {
+    products;
+    id;
+
+    constructor(path) {
+        this.path = path;
+        this.loadFile();
+    }
+
+    loadFile() {
+        try {
+            this.products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
+        } catch (err) {
+            throw new Error(err);
+        }
+        this.controlID()
+    }
+
+    updateProduct() {
+        try {
+            fs.writeFileSync(this.path, JSON.stringify(this.products));
+        } catch (err) {
+            throw new Error(err);
+        }
+    }
+
+    controlID() {
+        this.id = this.products.length;
+    }
+
+    deleteProduct(id) {
+        let productVoid = { description: "Producto eliminado", id: id };
+        this.products[id - 1] = productVoid;
+        this.updateProduct();
     }
 
     addProducts(product) {
@@ -17,6 +47,7 @@ class ProductManager {
                 this.id++;
                 product = { ...product, id: this.id };
                 this.products.push(product);
+                this.updateProduct();
             }
         }
     }
@@ -40,26 +71,27 @@ class ProductManager {
     }
 }
 
-const manager = new ProductManager();
+const manager = new ProductManager("./products.json");
 
 //----- Desarollo de los productos -----//
-const product1 = { title: "Pepsi", description: "Gaseosa", price: 400, thumbnail: "link", code: "ABC123", stock: 80 };
+const product1 = { title: "Fanta", description: "Gaseosa", price: 400, thumbnail: "link", code: "ABC128", stock: 80 };
 manager.addProducts(product1);
 
-const product2 = { title: "Coca-Cola", description: "Gaseosa", price: 500, thumbnail: "link", code: "ABC124", stock: 50 };
-manager.addProducts(product2);
+// const product2 = { title: "Coca-Cola", description: "Gaseosa", price: 500, thumbnail: "link", code: "ABC124", stock: 50 };
+// manager.addProducts(product2);
 
-const product3 = { title: "Goliat", description: "Gaseosa", price: 100, thumbnail: "link", code: "ABC125", stock: 50 };
-manager.addProducts(product3);
+// const product3 = { title: "Goliat", description: "Gaseosa", price: 100, thumbnail: "link", code: "ABC126", stock: 50 };
+// manager.addProducts(product3);
 
-// Producto 4 codigo repetido //
-const product4 = { title: "Manaos", description: "Gaseosa", price: 100, thumbnail: "link", code: "ABC125", stock: 100 };
-manager.addProducts(product4);
+// // Producto 4 codigo repetido //
+// const product4 = { title: "Manaos", description: "Gaseosa", price: 100, thumbnail: "link", code: "ABC125", stock: 100 };
+// manager.addProducts(product4);
 
-// Producto 5 incompleto //
-const product5 = { thumbnail: "link", code: "ABC" };
-manager.addProducts(product5);
-// ----- ----- //
+// // Producto 5 incompleto //
+// const product5 = { thumbnail: "link", code: "ABC" };
+// manager.addProducts(product5);
+// // ----- ----- //
 
+//manager.deleteProduct(5);
 manager.getProducts();
-manager.getProductsById(1);
+manager.getProductsById(6);
