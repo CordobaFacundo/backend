@@ -1,0 +1,51 @@
+[
+    {
+        "title": "Pepsi",
+        "description": "Gaseosa",
+        "price": 400,
+        "thumbnail": "link",
+        "code": "ABC123",
+        "stock": 80,
+        "id": 1
+    },
+    {
+        "title": "Coca-Cola",
+        "description": "Gaseosa",
+        "price": 500,
+        "thumbnail": "link",
+        "code": "ABC124",
+        "stock": 100,
+        "id": 2
+    },
+    {
+        "title": "Sprite",
+        "description": "Gaseosa",
+        "price": 200,
+        "thumbnail": "link",
+        "code": "ABC125",
+        "stock": 350,
+        "id": 3
+    },
+    {
+        "title": "Goliat",
+        "description": "Gaseosa",
+        "price": 100,
+        "thumbnail": "link",
+        "code": "ABC126",
+        "stock": 50,
+        "id": 4
+    },
+    {
+        "description": "Producto eliminado",
+        "id": 5
+    },
+    {
+        "title": "Fanta",
+        "description": "Gaseosa",
+        "price": 400,
+        "thumbnail": "link",
+        "code": "ABC128",
+        "stock": 80,
+        "id": 6
+    }
+]
