@@ -36,4 +36,6 @@ app.get('/bienvenida/:nombre', function (req, res) {
 })
 
 //levata el server
-app.listen(3000)
+app.listen(3000, () => {
+    console.log("Servidor levantado en http://localhost:3000")
+})
