@@ -1,0 +1,60 @@
+[
+    {
+        "title": "ASUS NVIDIA GeForce RTX 3050",
+        "description": "Placa de video",
+        "price": 130000,
+        "thumbnail": "link",
+        "code": "ABC123",
+        "stock": 80,
+        "id": 1
+    },
+    {
+        "title": "Gigabyte NVIDIA GeForce RTX 3050",
+        "description": "Placa de video",
+        "price": 150000,
+        "thumbnail": "link",
+        "code": "ABC124",
+        "stock": 100,
+        "id": 2
+    },
+    {
+        "title": "SAMSUNG 32 HD",
+        "description": "LED TV SMART",
+        "price": 60000,
+        "thumbnail": "link",
+        "code": "ABC125",
+        "stock": 350,
+        "id": 3
+    },
+    {
+        "title": "Gigabyte G27F2 27 165Hz",
+        "description": "Monitor",
+        "price": 30000,
+        "thumbnail": "link",
+        "code": "ABC126",
+        "stock": 50,
+        "id": 4
+    },
+    {
+        "description": "Producto eliminado",
+        "id": 5
+    },
+    {
+        "title": "SAMSUNG 43 Full HD",
+        "description": "LED TV SMART",
+        "price": 80000,
+        "thumbnail": "link",
+        "code": "ABC128",
+        "stock": 80,
+        "id": 6
+    },
+    {
+        "title": "Intel Core I3 10100F",
+        "description": "Procesador",
+        "price": 30000,
+        "thumbnail": "link",
+        "code": "ABC128",
+        "stock": 80,
+        "id": 6
+    }
+]
